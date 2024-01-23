@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #fff; 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+h1, h5 {
+    color: #408040; /* Green header and subheader text */
+}
+
+input, button {
+    padding: 8px;
+    border: 1px solid #4CAF50; /* Green border for input and button */
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50; /* Green button background */
+    color: #fff; /* White button text */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.error {
+    color: #ff0000; /* Red error text */
+    margin-top: 10px;
+}
+
+#output {
+    display: none;
+    margin-top: 20px;
+}
+
+#Information {
+    display: none;
+    margin-top: 10px;
+    color: #408040; /* Green text for information */
+}
+
+#nextChosenMiner,
+#nextNLegendaries {
+    margin-top: 20px;
+}
+
+label {
+    color: #408040; 
+    margin-right: 5px;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #408040; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2; /* Light gray background for table headers */
+}
+
+input[type="number"] {
+    padding: 8px;
+    width: 60px;
+}

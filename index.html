@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="FlippySpatula">
+        <meta name="description" content="Discover exactly how badly RNG will treat you with regards to super miners.">
+        <meta name="keywords" content="Mr Mine, Mr.Mine, Super Miners">
+        <title>Mr.Mine Super Miner Oracle</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/webp" href="/favicon.webp">
+        <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+
+    <body>
+        <div class="box">
+            <h1>SUPER MINER ORACLE</h1>
+            <h5>Mr. Mine v0.40</h5>
+            <div id="input" class="box">
+                <div>
+                    Input:
+                </div>
+                <div id="user_input" class="box">
+                    <span>Enter save here: </span>
+                    <input id="saveinput" type="text" placeholder="Paste save here" spellcheck="false">
+                    <button onclick="loadSave()" type="button">
+                        CALCULATE
+                    </button>
+                    <div id="save_error" class="error" style="display:none">Error Reading Save</div>
+                    <div id="no_chests_error" class="error" style="display:none">
+                        This tool requires that you have opened at least 1 ethereal chest on your save first. 
+                        You can get one for free at 10km.
+                    </div>
+                </div>
+            </div>
+            <div id="output" style="display:none" class="box">
+                <button onclick="toggleElement('Information')">Show/Hide Help Text</button>
+                <div id="Information" style="display:none" class="box">
+                    <h4>Helpful Information:</h4>
+                    <p>
+                        Because you will never roll another Egg once you already have 4, any predicted Super Miner will be
+                        influenced by the number of Eggs you have.
+                        All predicted Super Miners will thus have attached the required number of Eggs you need to have 
+                        in your inventory <em>at the time the chest is opened</em>. 
+                    </p>
+                    <p>
+                        If you want a Super Miner in the &lt;4 eggs category, but you have 4 eggs you are currently leveling, 
+                        you have two options: scrap one before opening (you'll find another in due time), or wait for the 
+                        desired Super Miner to show up in the 4 eggs category.
+                    </p>
+                    <p>
+                        If you want a Super Miner in the 4 eggs category, but you do not currently have 4 eggs, you will have 
+                        to hope you will get 4 eggs by the target chest. Unfortunately, this page does not yet have implemented 
+                        a tool to check how many eggs you will get by a target chest number.
+                    </p>
+                </div>
+
+                <div id="nextChosenMiner" class="box">
+                    <h4>Find Upcoming Super Miner:</h4>
+                    <div id="chooseMinerInput">
+                        <label for="raritySelect">Select Rarity:</label>
+                        <select id="raritySelect" onchange="updateMinerSelect()">
+                            <option value="Rare">Rare</option>
+                            <option value="Legendary" selected>Legendary</option>
+                        </select>
+                    
+                        <label for="minerSelect">Select Super Miner:</label>
+                        <select id="minerSelect" onchange="getChosenMinerStats()">
+
+                        </select>
+                    </div>
+                    <div id="chooseMinerOutput" class="box">
+                    </div>                    
+                </div>
+
+                <div id="nextNLegendaries" class="box">
+                    <h4>Upcoming Legendaries:</h4>
+                    <span>Ethereal Chests Needed for Next </span>
+                    <input type="number" id="legendaryCount" value="10" min="1" max="100" size="5" onchange="updateLegendaryTable()">
+                    <span> Legendaries:</span>
+                    <table id="legendaryTable">
+                        <thead>
+                            <tr>
+                                <th>Chest #</th>
+                                <th>&lt;4 Eggs</th>
+                                <th>4 Eggs</th>
+                            </tr>
+                        </thead>
+                        <tbody id="legendaryTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="js/oracle.js"></script>
+        <script src="js/math_stuff.js"></script>
+    </body>
+</html>
